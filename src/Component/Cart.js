@@ -24,7 +24,7 @@ const Cart = ({ image, price, title  }) => {
           <div className=" flex justify-between lg:items-start items-center lg:w-[40%]  w-[30%] space-x-8 lg:space-x-28 ">
             <img
               src={image}
-alt="image"
+alt="logo"
               className="   w-6 lg:w-24 lg:h-16 h-8 object-contain"
             />
             <span className="text-[7px]  lg:text-lg underline w-11 lg:w-full text-blue-600">
