@@ -12,6 +12,8 @@ const FetchData = ({ eco, filterData, search }) => {
             return data;
           } else if (data.title.toLowerCase().includes(search.toLowerCase())) {
             return data;
+          }else{
+           return data;
           }
         })
         ?.filter((data) => {
