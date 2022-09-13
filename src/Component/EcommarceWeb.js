@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCaretDown,
-  faArrowRotateLeft,
+  faArrowRotateLeft, faCaretDown
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import FetchData from "./FetchData";
-import { UsestateValue } from "./State";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import FetchData from "./FetchData";
 
 const EcommarceWeb = () => {
   const [eco, seteco] = useState();
-  const [{ basket }] = UsestateValue();
 
   useEffect(() => {
     const fetchdata = async () => {
