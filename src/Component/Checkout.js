@@ -48,7 +48,6 @@ const Checkout = () => {
                     className="cursor-pointer"
                   />
                   <img
-alt="logo"
                     src={val.image}
                     className="   w-6 lg:w-24 lg:h-16 h-8 object-contain"
                   />

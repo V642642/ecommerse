@@ -74,7 +74,7 @@ const EcommarceWeb = () => {
               ADD TO CART
             </button>
           </Link>
-          <div>{basket?.length}</div>
+          {/* <div>{basket?.length}</div> */}
           </div>
         </div>
       </div>

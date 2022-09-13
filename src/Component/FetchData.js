@@ -1,9 +1,22 @@
 import React from "react";
 
 import Cart from "./Cart";
+import { UsestateValue } from "./State";
 
 const FetchData = ({ eco, filterData, search }) => {
-  
+    const [{ basket }, dispatch] = UsestateValue();
+    console.log(basket, "basket");
+  //   const add = () => {
+  //     dispatch({
+  //       type: "ADD",
+  //       payload : {
+  // image: "image"
+
+  //       }
+  //     });
+  //   };
+
+  // console.log(basket, "jy");
   return (
     <div>
       {eco
@@ -12,8 +25,6 @@ const FetchData = ({ eco, filterData, search }) => {
             return data;
           } else if (data.title.toLowerCase().includes(search.toLowerCase())) {
             return data;
-          }else{
-           return data;
           }
         })
         ?.filter((data) => {
