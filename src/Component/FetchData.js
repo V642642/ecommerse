@@ -2,16 +2,15 @@ import React from "react";
 import Cart from "./Cart";
 
 const FetchData = ({ eco, filterData, search }) => {
-  console.log(eco[0]?.title)
   return (
     <div>
       {eco?.filter((data) => {
           if (search === "") {
             return data;
-          }
-          if (data.title.toLowerCase().includes(search.toLowerCase())) {
+          }else if (data.title.toLowerCase().includes(search.toLowerCase())) {
             return data;
           }
+          return false
 
         }).filter((data) => {
           if (filterData === "") {
