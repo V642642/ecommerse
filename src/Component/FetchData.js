@@ -8,17 +8,18 @@ const FetchData = ({ eco, filterData, search }) => {
       {eco?.filter((data) => {
           if (search === "") {
             return data;
-          }else if (data.title.toLowerCase().includes(search.toLowerCase())) {
-            console.log(search)
+          }
+          if (data.title.toLowerCase().includes(search.toLowerCase())) {
             return data;
           }
-        })?.filter((data) => {
+
+        }).filter((data) => {
           if (filterData === "") {
             return data;
           }else{
             return data.category === filterData;
           }
-        })?.map((value, index) => {
+        }).map((value, index) => {
           return (
             <Cart
               id={value.id}
