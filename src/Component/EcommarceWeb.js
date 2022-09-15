@@ -8,13 +8,12 @@ import { Link } from "react-router-dom";
 import FetchData from "./FetchData";
 
 const EcommarceWeb = () => {
-  const [eco, seteco] = useState();
+  const [eco, seteco] = useState([]);
 
   useEffect(() => {
     const fetchdata = async () => {
       const data = await axios.get("https://fakestoreapi.com/products");
       seteco(data?.data);
-      console.log(data, "jj");
     };
     fetchdata();
   }, []);
@@ -26,8 +25,8 @@ const EcommarceWeb = () => {
     "women's clothing",
   ];
 
+
   const [search, setSearch] = useState("");
-  console.log(search.toLowerCase());
 
   return (
     <div className="main_div  p-4">
@@ -49,7 +48,11 @@ const EcommarceWeb = () => {
             <h3>Size</h3>
             <FontAwesomeIcon icon={faCaretDown} />
           </div>
-          <div className="reset  flex items-center  gap-3  text-blue-500 ">
+          <div onClick={() => {
+            setFilterData('');
+            setSearch("")
+
+          }} className="reset cursor-pointer  flex items-center  gap-3  text-blue-500 ">
             <FontAwesomeIcon icon={faArrowRotateLeft}  className = "cursor-pointer"/>
             <span>Reset</span>
           </div>
@@ -58,7 +61,13 @@ const EcommarceWeb = () => {
         <div className="nav_right flex items-center gap-4 w-full   flex-col md:flex-row lg:w-[30%] ">
           <div className="flex items-center gap-3">
             <span className="text-lg capitalize">search:</span>
-            <input
+            {/* <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className=" border border-gray-100 p-2  bg-gray-200 rounded-sm"
+            /> */}
+             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -98,7 +107,7 @@ const EcommarceWeb = () => {
         <div className="font-bold text-[12px]  lg:text-xl">buy</div>
       </div>
       <div className="bg-black border border-black"></div>
-
+     
       <FetchData search={search} filterData={filterData} eco={eco} />
     </div>
   );
